@@ -1,0 +1,15 @@
+﻿<local:CustomChromeWindow x:Class="WpfWindowChrome.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:WpfWindowChrome"
+    xmlns:ext="clr-namespace:System.Windows.Extensions;assembly=WindowChrome"
+    Title="Custom Chrome Window" Height="768" Width="1024">
+    <ext:WindowChrome.WindowChrome>
+        <ext:WindowChrome UseGlassFrame="False"
+          RoundCorners="True" 
+          RoundCornersRadius="6"/>
+    </ext:WindowChrome.WindowChrome>
+    <Grid>
+        
+    </Grid>
+</local:CustomChromeWindow>

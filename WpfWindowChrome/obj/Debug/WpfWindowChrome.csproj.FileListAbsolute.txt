@@ -1,0 +1,16 @@
+C:\Users\Charlie\Desktop\wpf-window-chrome\WpfWindowChrome\bin\Debug\WpfWindowChrome.exe
+C:\Users\Charlie\Desktop\wpf-window-chrome\WpfWindowChrome\bin\Debug\WpfWindowChrome.pdb
+C:\Users\Charlie\Desktop\wpf-window-chrome\WpfWindowChrome\bin\Debug\WindowChrome.dll
+C:\Users\Charlie\Desktop\wpf-window-chrome\WpfWindowChrome\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Charlie\Desktop\wpf-window-chrome\WpfWindowChrome\obj\Debug\MainWindow.baml
+C:\Users\Charlie\Desktop\wpf-window-chrome\WpfWindowChrome\obj\Debug\MainWindow.g.cs
+C:\Users\Charlie\Desktop\wpf-window-chrome\WpfWindowChrome\obj\Debug\App.g.cs
+C:\Users\Charlie\Desktop\wpf-window-chrome\WpfWindowChrome\obj\Debug\WpfWindowChrome_MarkupCompile.cache
+C:\Users\Charlie\Desktop\wpf-window-chrome\WpfWindowChrome\obj\Debug\WpfWindowChrome_MarkupCompile.lref
+C:\Users\Charlie\Desktop\wpf-window-chrome\WpfWindowChrome\obj\Debug\Themes\Generic.baml
+C:\Users\Charlie\Desktop\wpf-window-chrome\WpfWindowChrome\obj\Debug\WpfWindowChrome.g.resources
+C:\Users\Charlie\Desktop\wpf-window-chrome\WpfWindowChrome\obj\Debug\WpfWindowChrome.Properties.Resources.resources
+C:\Users\Charlie\Desktop\wpf-window-chrome\WpfWindowChrome\obj\Debug\WpfWindowChrome.csproj.GenerateResource.Cache
+C:\Users\Charlie\Desktop\wpf-window-chrome\WpfWindowChrome\obj\Debug\WpfWindowChrome.exe
+C:\Users\Charlie\Desktop\wpf-window-chrome\WpfWindowChrome\obj\Debug\WpfWindowChrome.pdb
+C:\Users\Charlie\Desktop\wpf-window-chrome\WpfWindowChrome\obj\Debug\GeneratedInternalTypeHelper.g.cs
