@@ -37,6 +37,7 @@ namespace WpfWindowChrome
     using System.Windows.Input;
     using System.Windows.Interop;
     using System.Windows.Media;
+    using System.Windows.Extensions;
 
     /// <summary>
     /// A better Window that supports custom chrome, title bars, hierarchical data context management by default.
@@ -254,6 +255,16 @@ namespace WpfWindowChrome
         {
             get { return (Style)GetValue(MinimizeButtonStyleProperty); }
             set { SetValue(MinimizeButtonStyleProperty, value); }
+        }
+
+        public double RealLeft
+        {
+            get { return this.Left + 3; }
+        }
+
+        public double RealTop
+        {
+            get { return this.Top + 3; }
         }
 
         /// <summary>
@@ -493,6 +504,30 @@ namespace WpfWindowChrome
         protected virtual void OnContentDesiredSizeChanged()
         {
             this.InvalidateMeasure();
+        }
+
+        protected override void OnSourceInitialized(EventArgs e)
+        {
+            base.OnSourceInitialized(e);
+
+            // Get this window's handle
+            IntPtr hwnd = new WindowInteropHelper(this).Handle;
+
+            // Change the extended window style to not show a window icon
+            int extendedStyle = SafeNativeMethods.GetWindowLong(hwnd, SafeNativeMethods.GWL_EXSTYLE);
+            int style = SafeNativeMethods.GetWindowLong(hwnd, SafeNativeMethods.GWL_STYLE);
+
+            SafeNativeMethods.SetWindowLong(
+                hwnd, 
+                SafeNativeMethods.GWL_STYLE,
+                style & ~SafeNativeMethods.WS_SYSMENU & ~SafeNativeMethods.WS_MINIMIZEBOX & ~SafeNativeMethods.WS_MAXIMIZEBOX & SafeNativeMethods.WS_DLGFRAME);
+
+            // Update the window's non-client area to reflect the changes
+            SafeNativeMethods.SetWindowPos(
+                hwnd, 
+                IntPtr.Zero, 
+                0, 0, 0, 0,
+                SafeNativeMethods.SWP_NOMOVE | SafeNativeMethods.SWP_NOSIZE | SafeNativeMethods.SWP_NOZORDER | SafeNativeMethods.SWP_FRAMECHANGED);
         }
 
         /// <summary>
