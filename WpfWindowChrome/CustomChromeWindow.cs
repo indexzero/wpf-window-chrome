@@ -1,43 +1,40 @@
-﻿/**************************************************************
- * Copyright (c) 2009 Charlie Robbins
- * 
- * Permission is hereby granted, free of charge, to any person
- * obtaining a copy of this software and associated documentation
- * files (the "Software"), to deal in the Software without
- * restriction, including without limitation the rights to use,
- * copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the
- * Software is furnished to do so, subject to the following
- * conditions:
- * 
- * The above copyright notice and this permission notice shall be
- * included in all copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
- * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
- * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
- * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
- * OTHER DEALINGS IN THE SOFTWARE.
-**************************************************************/
+﻿//-----------------------------------------------------------------------
+// <copyright file="CustomChromeWindow.cs" company="Charlie Robbins">
+//     Copyright (c) Charlie Robbins.  All rights reserved.
+// </copyright>
+// <license>
+// Permission is hereby granted, free of charge, to any person
+// obtaining a copy of this software and associated documentation
+// files (the "Software"), to deal in the Software without
+// restriction, including without limitation the rights to use,
+// copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the
+// Software is furnished to do so, subject to the following
+// conditions:
+//
+// The above copyright notice and this permission notice shall be
+// included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+// OTHER DEALINGS IN THE SOFTWARE.
+// </license>
+// <summary>Contains the CustomChromeWindow class.</summary>
+//-----------------------------------------------------------------------
 
 namespace WpfWindowChrome
 {
     using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Diagnostics;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Runtime.InteropServices;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Controls.Primitives;
-    using System.Windows.Input;
     using System.Windows.Interop;
     using System.Windows.Media;
-    using System.Windows.Extensions;
 
     /// <summary>
     /// A better Window that supports custom chrome, title bars, hierarchical data context management by default.
@@ -257,11 +254,19 @@ namespace WpfWindowChrome
             set { SetValue(MinimizeButtonStyleProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the real left.
+        /// </summary>
+        /// <value>The real left.</value>
         public double RealLeft
         {
             get { return this.Left + 3; }
         }
 
+        /// <summary>
+        /// Gets the real top.
+        /// </summary>
+        /// <value>The real top.</value>
         public double RealTop
         {
             get { return this.Top + 3; }
@@ -506,6 +511,10 @@ namespace WpfWindowChrome
             this.InvalidateMeasure();
         }
 
+        /// <summary>
+        /// Raises the <see cref="E:System.Windows.Window.SourceInitialized"/> event.
+        /// </summary>
+        /// <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
         protected override void OnSourceInitialized(EventArgs e)
         {
             base.OnSourceInitialized(e);
@@ -526,7 +535,10 @@ namespace WpfWindowChrome
             SafeNativeMethods.SetWindowPos(
                 hwnd, 
                 IntPtr.Zero, 
-                0, 0, 0, 0,
+                0, 
+                0, 
+                0, 
+                0,
                 SafeNativeMethods.SWP_NOMOVE | SafeNativeMethods.SWP_NOSIZE | SafeNativeMethods.SWP_NOZORDER | SafeNativeMethods.SWP_FRAMECHANGED);
         }
 
